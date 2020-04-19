@@ -15,10 +15,8 @@ import { mapState } from 'vuex'
 import EventCard from '@/components/EventCard.vue'
 
 export default {
-  head() {
-    return {
-      title: 'Event Listing'
-    }
+  components: {
+    EventCard
   },
   async fetch({ store, error }) {
     try {
@@ -30,9 +28,12 @@ export default {
       })
     }
   },
-  components: {
-    EventCard
+  head() {
+    return {
+      title: 'Event Listing'
+    }
   },
+  // eslint-disable-next-line vue/order-in-components
   computed: mapState({
     events: (state) => state.events.events
   })

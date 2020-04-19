@@ -50,6 +50,7 @@ export default {
       ]
     }
   },
+  // eslint-disable-next-line vue/order-in-components
   async fetch({ store, error, params }) {
     try {
       await store.dispatch('events/fetchEvent', params.id)
@@ -60,6 +61,7 @@ export default {
       })
     }
   },
+  // eslint-disable-next-line vue/order-in-components
   computed: mapState({
     event: (state) => state.events.event
   })
